@@ -1,0 +1,78 @@
+/* src/components/Header.css */
+
+.header {
+    height: 34vw;
+    margin: 30px auto;
+    background: url('/pexels.jpg') no-repeat;
+    background-size: cover; /* Ensure the image covers the header */
+    background-position: center; /* Center the background image */
+    position: relative;
+}
+
+.header-contents {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5vw;
+    max-width: 50%;
+    bottom: 10%;
+    left: 6vw;
+    animation: fadeIn 3s;
+}
+
+/* Styles for h2 and p */
+.header-contents h2 {
+    font-weight: 500;
+    color: white;
+    font-size: max(4.5vw, 22px); /* Adjust font size based on viewport width */
+    margin: 0; /* Remove default margin */
+}
+
+.header-contents p {
+    color: white;
+    font-size: max(1vw, 16px); /* Adjust font size based on viewport width */
+    margin: 0; /* Remove default margin */
+}
+
+/* Button styling */
+.header-contents button {
+    border: none;
+    color: #747474;
+    font-weight: 500;
+    padding: 1vw 2.3vw;
+    background: white;
+    font-size: max(1vw, 13px);
+    border-radius: 50px;
+}
+
+/* Media Queries */
+@media (max-width: 1050px) {
+    .header {
+        height: 38vw;
+    }
+    .header-contents {
+        max-width: 45%;
+    }
+    .header-contents h2 {
+        font-size: max(4vw, 20px); /* Adjust font size for smaller screens */
+    }
+    .header-contents p {
+        font-size: max(0.9vw, 14px); /* Adjust font size for smaller screens */
+    }
+}
+
+@media (max-width: 750px) {
+    .header-contents {
+        max-width: 55%;
+    }
+    .header-contents p {
+        display: none; /* Hide paragraph on very small screens */
+    }
+    .header-contents button {
+        padding: 2vw 4vw; /* Adjust button padding for smaller screens */
+    }
+    .header-contents h2 {
+        font-size: max(3.5vw, 18px); /* Adjust font size for very small screens */
+    }
+}
