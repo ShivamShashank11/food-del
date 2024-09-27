@@ -52,3 +52,76 @@
         font-size: 14px;
     }
 }
+.explore-menu-list {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 20px; /* Space between rows */
+}
+
+.explore-menu-list-row {
+    display: flex; /* Align items in a row */
+    justify-content: space-between; /* Distribute space evenly */
+}
+
+.explore-menu-list-item {
+    flex: 1; /* Allow each item to grow */
+    margin: 0 10px; /* Optional margin for spacing between items */
+    text-align: center; /* Center text under the image */
+}
+
+.explore-menu-list-item img {
+    width: 100px; 
+    height: 100px;
+    object-fit: cover; 
+}
+
+.active {
+    border: 2px solid #4caf50; 
+}
+.explore-menu {
+    padding: 20px;
+    text-align: left; 
+}
+
+.explore-menu h1 {
+    font-size: 2.5em; 
+    font-weight: bold;
+    color: #333; 
+    margin-bottom: 15px; 
+    text-align: left; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+}
+
+.explore-menu-text {
+    margin-bottom: 20px;
+    font-size: 1.1em; 
+}
+
+.explore-menu-list {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.explore-menu-list-item {
+    flex: 1 1 20%; 
+    margin: 10px; 
+    text-align: center; 
+    padding: 10px; 
+}
+
+.explore-menu-list-item img {
+    width: 150px; 
+    height: 150px; 
+    object-fit: cover; 
+}
+
+.explore-menu-list-item p {
+    font-size: 1.5em; 
+    margin-top: 10px; 
+}
+
+.active {
+    border: 2px solid #4caf50; 
+}

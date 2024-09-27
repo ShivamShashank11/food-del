@@ -20,6 +20,15 @@ import menu_6 from './menu_6.png'
 import menu_7 from './menu_7.png'
 import menu_8 from './menu_8.png'
 
+import menu_9 from './menu_9.png'
+import menu_10 from './menu_10.png'
+import menu_11 from './menu_11.png'
+import menu_12 from './menu_12.png'
+import menu_13 from './menu_13.png'
+import menu_14 from './menu_14.png'
+import menu_15 from './menu_15.png'
+import menu_16 from './menu_16.png'
+
 import food_1 from './food_1.png'
 import food_2 from './food_2.png'
 import food_3 from './food_3.png'
@@ -135,7 +144,41 @@ export const menu_list = [
     {
         menu_name: "Noodles",
         menu_image: menu_8
-    }]
+    },
+    // New items starting from menu_9
+    {
+        menu_name: "Thali",
+        menu_image: menu_9
+    },
+    {
+        menu_name: "Dosa",
+        menu_image: menu_10
+    },
+    {
+        menu_name: "Idli",
+        menu_image: menu_11
+    },
+    {
+        menu_name: "Kachori",
+        menu_image: menu_12
+    },
+    {
+        menu_name: "Paratha",
+        menu_image: menu_13
+    },
+    {
+        menu_name: "Biryani",
+        menu_image: menu_14
+    },
+    {
+        menu_name: "Pizza",
+        menu_image: menu_15
+    },
+    {
+        menu_name: "Tea",
+        menu_image: menu_16
+    }
+];
 
 export const food_list = [
     {
@@ -248,124 +291,135 @@ export const food_list = [
         category: "Sandwich"
     }, {
         _id: "16",
-        name: "Bread Sandwich",
+        name: "Beef Sandwich",
         image: food_16,
         price: 24,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Sandwich"
-    }, {
+    },
+    {
         _id: "17",
-        name: "Cup Cake",
+        name: "Choco Cake",
         image: food_17,
-        price: 14,
+        price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "18",
-        name: "Vegan Cake",
+        name: "Carrot Cake",
         image: food_18,
-        price: 12,
+        price: 16,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "19",
-        name: "Butterscotch Cake",
+        name: "Apple Cake",
         image: food_19,
-        price: 20,
+        price: 10,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
     }, {
         _id: "20",
-        name: "Sliced Cake",
+        name: "Fruit Cake",
         image: food_20,
-        price: 15,
+        price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Cake"
-    }, {
+    },
+    {
         _id: "21",
-        name: "Garlic Mushroom ",
+        name: "Paneer Biryani",
         image: food_21,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
-    }, {
-        _id: "22",
-        name: "Fried Cauliflower",
-        image: food_22,
-        price: 22,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
-    }, {
-        _id: "23",
-        name: "Mix Veg Pulao",
-        image: food_23,
-        price: 10,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pure Veg"
-    }, {
-        _id: "24",
-        name: "Rice Zucchini",
-        image: food_24,
-        price: 12,
+        price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pure Veg"
     },
     {
-        _id: "25",
-        name: "Cheese Pasta",
-        image: food_25,
+        _id: "22",
+        name: "Veg Biryani",
+        image: food_22,
+        price: 25,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Pure Veg"
+    },
+    {
+        _id: "23",
+        name: "White Sauce Pasta",
+        image: food_23,
+        price: 20,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Pasta"
+    },
+    {
+        _id: "24",
+        name: "Red Sauce Pasta",
+        image: food_24,
         price: 12,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Pasta"
+    },
+    {
+        _id: "25",
+        name: "Macroni",
+        image: food_25,
+        price: 14,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Pasta"
     },
     {
         _id: "26",
-        name: "Tomato Pasta",
+        name: "American Noodles",
         image: food_26,
-        price: 18,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "27",
-        name: "Creamy Pasta",
-        image: food_27,
-        price: 16,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "28",
-        name: "Chicken Pasta",
-        image: food_28,
-        price: 24,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Pasta"
-    }, {
-        _id: "29",
-        name: "Buttter Noodles",
-        image: food_29,
-        price: 14,
-        description: "Food provides essential nutrients for overall health and well-being",
-        category: "Noodles"
-    }, {
-        _id: "30",
-        name: "Veg Noodles",
-        image: food_30,
         price: 12,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
-    }, {
-        _id: "31",
-        name: "Somen Noodles",
-        image: food_31,
+    },
+    {
+        _id: "27",
+        name: "Veg Noodles",
+        image: food_27,
         price: 20,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
-    }, {
-        _id: "32",
-        name: "Cooked Noodles",
-        image: food_32,
+    },
+    {
+        _id: "28",
+        name: "Cheese Noodles",
+        image: food_28,
         price: 15,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Noodles"
+    },
+    {
+        _id: "29",
+        name: "Spicy Noodles",
+        image: food_29,
+        price: 17,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Noodles"
+    },
+    {
+        _id: "30",
+        name: "Thali",
+        image: food_30,
+        price: 15,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Thali"
+    },
+    {
+        _id: "31",
+        name: "Dosa",
+        image: food_31,
+        price: 15,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Dosa"
+    },
+    {
+        _id: "32",
+        name: "Idli",
+        image: food_32,
+        price: 10,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Idli"
     }
 ]
