@@ -1,8 +1,9 @@
 .navbar {
-    padding: 20px 0px;
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background-color: white; /* Set your preferred background color */
 }
 
 .navbar-logo {
@@ -18,8 +19,21 @@
 }
 
 .navbar-menu .active {
-    padding-bottom: 2px;
-    border-bottom: 2px solid #49557E;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #FF4C24; /* Change to your preferred active color */
+    transition: border-bottom 0.3s; /* Smooth transition */
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    padding: 10px 15px; /* Add padding for better touch area */
+    border-radius: 5px; /* Round corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover */
+}
+
+.navbar-menu a:hover {
+    background-color: rgba(255, 76, 36, 0.1); /* Change hover effect */
+    color: #FF4C24; /* Change text color on hover */
 }
 
 .navbar-right {
@@ -30,6 +44,11 @@
 
 .navbar-search-icon {
     position: relative;
+}
+
+.basket-icon {
+    width: 50px; /* Increased size to 50px */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .navbar-search-icon .dot {
@@ -43,18 +62,19 @@
 }
 
 .sign-in-button {
-    background: transparent;
+    background: linear-gradient(135deg, #FF4C24, #FF7F50);
     font-size: 16px;
-    color: #49557E;
-    border: 1px solid #FF4C24;
-    padding: 10px 30px;
-    border-radius: 50px;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
 .sign-in-button:hover {
-    background: #fff4f2;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .navbar-profile {
@@ -68,21 +88,6 @@
     z-index: 1;
 }
 
-.navbar-profile-dropdown li {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-}
-
-.navbar-profile-dropdown img {
-    width: 20px;
-}
-
-.navbar-profile-dropdown li:hover {
-    color: #FF4C24;
-}
-
 .navbar-profile:hover .navbar-profile-dropdown {
     display: flex;
     flex-direction: column;
@@ -91,36 +96,27 @@
     padding: 12px 25px;
     border-radius: 4px;
     border: 1px solid tomato;
-    outline: 2px solid white;
     list-style: none;
 }
 
-.navbar-profile hr {
-    background-color: gray;
-    height: 1px;
-    border: none;
+.navbar-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.navbar-profile-dropdown li:hover {
+    color: #FF4C24;
 }
 
 @media (max-width: 1050px) {
     .navbar-logo {
         width: 140px;
     }
-
     .navbar-menu {
         gap: 20px;
         font-size: 17px;
-    }
-
-    .navbar-right {
-        gap: 30px;
-    }
-
-    .navbar-right img {
-        width: 22px;
-    }
-
-    .sign-in-button {
-        padding: 8px 25px;
     }
 }
 
@@ -128,79 +124,14 @@
     .navbar-logo {
         width: 120px;
     }
-
     .navbar-menu {
         gap: 15px;
         font-size: 16px;
-    }
-
-    .navbar-right {
-        gap: 20px;
-    }
-
-    .navbar-right img {
-        width: 20px;
-    }
-
-    .sign-in-button {
-        font-size: 15px;
-        padding: 7px 20px;
     }
 }
 
 @media (max-width: 750px) {
     .navbar-menu {
-        display: none;
+        display: none; /* Hide menu on smaller screens */
     }
-}
-
-.sign-in-button {
-    background: linear-gradient(135deg, #FF4C24, #FF7F50); /* Gradient background */
-    font-size: 16px;
-    color: white;
-    border: none; /* Remove default border */
-    padding: 12px 30px; /* Adjust padding for a better look */
-    border-radius: 30px; /* More rounded corners */
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s; /* Transition effects */
-    position: relative; /* For positioning shadow effect */
-    overflow: hidden; /* To contain shadow effect */
-    font-weight: bold; /* Bolder text */
-    text-transform: uppercase; /* Uppercase text */
-}
-
-.sign-in-button::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 300%;
-    height: 300%;
-    background: rgba(255, 255, 255, 0.3); /* Light white overlay */
-    transition: width 0.3s, height 0.3s, top 0.3s, left 0.3s;
-    border-radius: 50%;
-    z-index: 0;
-    transform: translate(-50%, -50%);
-}
-
-.sign-in-button:hover::before {
-    width: 0;
-    height: 0;
-    top: 50%;
-    left: 50%;
-}
-
-.sign-in-button:hover {
-    background: linear-gradient(135deg, #FF7F50, #FF4C24); /* Reverse gradient on hover */
-    transform: scale(1.1); /* Slightly enlarge the button */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add shadow effect */
-}
-
-.sign-in-button:focus {
-    outline: none; /* Remove default focus outline */
-}
-
-.sign-in-button span {
-    position: relative;
-    z-index: 1; /* Ensure text is above pseudo-element */
 }
