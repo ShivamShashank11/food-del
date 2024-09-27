@@ -61,6 +61,10 @@ import food_29 from './food_29.png'
 import food_30 from './food_30.png'
 import food_31 from './food_31.png'
 import food_32 from './food_32.png'
+import food_33 from './food_33.jpg'
+import food_34 from './food_34.jpg'
+import food_35 from './food_35.jpg'
+import food_36 from './food_36.jpg'
 
 import add_icon_white from './add_icon_white.png'
 import add_icon_green from './add_icon_green.png'
@@ -421,5 +425,39 @@ export const food_list = [
         price: 10,
         description: "Food provides essential nutrients for overall health and well-being",
         category: "Idli"
+    },
+
+    {
+        id: "33",
+        name: "Bihari Thali",
+        image: food_33,
+        price: 150,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Thali"
+    },
+    {
+        id: "34",
+        name: "Rajasthani Thali",
+        image: food_34,
+        price: 160,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Thali"
+    },
+    {
+
+        id: "35",
+        name: "Gujarati Thali",
+        image: food_35,
+        price: 250,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Thali"
+    },
+    {
+        id: "36",
+        name: "Punjabi Thali",
+        image: food_36,
+        price: 10,
+        description: "Food provides essential nutrients for overall health and well-being",
+        category: "Thali"
     }
 ]
