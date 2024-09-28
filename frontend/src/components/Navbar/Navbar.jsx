@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import { assets } from "../../assets/assets";
@@ -26,40 +25,75 @@ const Navbar = ({ setShowLogin }) => {
       <div className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         <Link
           to="/"
-          onClick={() => setMenu("home")}
+          onClick={() => {
+            setMenu("home");
+            setIsMenuOpen(false); // Close the menu when an item is clicked
+          }}
           className={`${menu === "home" ? "active" : ""}`}
         >
           Home
         </Link>
         <a
           href="#explore-menu"
-          onClick={() => setMenu("menu")}
+          onClick={() => {
+            setMenu("menu");
+            setIsMenuOpen(false); // Close the menu when an item is clicked
+          }}
           className={`${menu === "menu" ? "active" : ""}`}
         >
           Menu
         </a>
         <a
           href="#app-download"
-          onClick={() => setMenu("mob-app")}
+          onClick={() => {
+            setMenu("mob-app");
+            setIsMenuOpen(false); // Close the menu when an item is clicked
+          }}
           className={`${menu === "mob-app" ? "active" : ""}`}
         >
           Mobile App
         </a>
         <a
           href="#offers"
-          onClick={() => setMenu("offers")}
+          onClick={() => {
+            setMenu("offers");
+            setIsMenuOpen(false); // Close the menu when an item is clicked
+          }}
           className={`${menu === "offers" ? "active" : ""} offer-link`}
         >
           Offers
         </a>
         <a
           href="#footer"
-          onClick={() => setMenu("contact")}
+          onClick={() => {
+            setMenu("contact");
+            setIsMenuOpen(false); // Close the menu when an item is clicked
+          }}
           className={`${menu === "contact" ? "active" : ""}`}
         >
           Contact Us
         </a>
       </div>
+
+      {/* Hamburger Menu Box */}
+      <div className={`hamburger-menu ${isMenuOpen ? "open" : ""}`}>
+        <Link to="/" onClick={() => setIsMenuOpen(false)}>
+          Home
+        </Link>
+        <a href="#explore-menu" onClick={() => setIsMenuOpen(false)}>
+          Menu
+        </a>
+        <a href="#app-download" onClick={() => setIsMenuOpen(false)}>
+          Mobile App
+        </a>
+        <a href="#offers" onClick={() => setIsMenuOpen(false)}>
+          Offers
+        </a>
+        <a href="#footer" onClick={() => setIsMenuOpen(false)}>
+          Contact Us
+        </a>
+      </div>
+
       <div className="navbar-right">
         <img src={assets.search_icon} alt="Search" />
         <Link to="/cart" className="navbar-search-icon">

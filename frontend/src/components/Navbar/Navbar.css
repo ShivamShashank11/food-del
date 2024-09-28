@@ -1,19 +1,26 @@
-/* Navbar Styling */
+/* Navbar styling without background color */
 .navbar {
-    background-color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
     width: 100%;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Ensure background color is transparent */
 }
 
+/* Responsive logo size */
 .navbar-logo img {
-    width: 150px; /* Default size for larger screens */
-    transition: width 0.3s ease; /* Smooth transition when resizing */
+    width: 150px;
+    transition: width 0.3s;
 }
 
+@media (max-width: 768px) {
+    .navbar-logo img {
+        width: 100px;
+    }
+}
+
+/* Menu items */
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -23,40 +30,47 @@
 
 .navbar-menu a {
     text-decoration: none;
-    color: #49557E;
-    padding: 10px;
+    color: #49557E; /* Keep text color */
+    padding: 10px; /* Maintain padding for clickable area */
 }
 
+/* Style the right side of the navbar */
 .navbar-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 15px;
 }
 
+/* Style for search icon */
+.navbar-right img {
+    width: 25px; /* Assuming this is the size for search icon */
+    height: 25px; /* Ensure the search icon is of similar height */
+}
+
+/* Style for basket icon */
 .basket-icon {
-    width: 30px; /* Large enough for visibility on mobile */
-    height: auto;
+    width: 30px; /* Increased size to make it bigger */
+    height: 30px; /* Maintain aspect ratio */
     position: relative;
 }
 
-/* Sign-in button with light orange color */
+/* Sign-in button with compact size */
 .sign-in-button {
-    background: linear-gradient(135deg, #FFB347, #FFCC99); /* Light orange gradient */
-    font-size: 14px;
+    background: linear-gradient(135deg, #FFB347, #FFCC99);
     color: white;
-    padding: 8px 18px;
+    padding: 8px 15px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+    font-size: 14px;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .sign-in-button:hover {
-    transform: scale(1.05); /* Slight hover effect */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
+    transform: scale(1.05);
 }
 
-/* Hamburger menu icon for mobile */
+/* Hamburger icon for mobile */
 .hamburger {
     display: none;
     cursor: pointer;
@@ -70,59 +84,55 @@
     background-color: #333;
 }
 
-/* Show the hamburger icon and adjust the layout on smaller screens */
+/* Show hamburger on mobile */
 @media (max-width: 900px) {
     .navbar-menu {
-        display: none; /* Hide the menu items */
+        display: none;
     }
-
+    
     .hamburger {
-        display: flex; /* Show the hamburger menu */
+        display: flex;
     }
+}
 
+/* Hamburger menu styling */
+.hamburger-menu {
+    display: none; /* Hide by default */
+    position: absolute; /* Absolute positioning */
+    top: 60px; /* Position below the navbar */
+    right: 0; /* Align to the right */
+    width: 100%; /* Full width */
+    background-color: white; /* Background color for the menu box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    z-index: 1000; /* Ensure it appears above other elements */
+    flex-direction: column; /* Vertical stacking */
+    padding: 10px; /* Padding for the menu box */
+}
+
+/* Show hamburger menu when open */
+.hamburger-menu.open {
+    display: flex; /* Show when open */
+}
+
+/* Adjust menu items in hamburger menu */
+.hamburger-menu a {
+    padding: 10px 15px; /* Padding for clickable area */
+    color: #49557E; /* Keep text color */
+    text-decoration: none; /* No underline */
+}
+
+.hamburger-menu a:hover {
+    background-color: #f0f0f0; /* Optional hover effect */
+}
+
+/* Responsive for small screens */
+@media (max-width: 768px) {
+    .sign-in-button {
+        padding: 6px 12px; /* Smaller button size for mobile */
+        font-size: 12px;
+    }
+    
     .navbar-right {
-        gap: 10px;
-        flex-direction: row; /* Ensure the items stay in a row */
-    }
-
-    .navbar-logo img {
-        width: 120px; /* Adjusted logo size */
-    }
-
-    .sign-in-button {
-        padding: 6px 12px; /* Reduce the button padding for mobile */
-        font-size: 12px; /* Smaller font size for mobile */
+        gap: 10px; /* Adjust gap for mobile */
     }
 }
-
-/* When menu is open on mobile */
-.navbar-menu.open {
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    position: absolute;
-    top: 60px;
-    right: 0;
-    width: 100%;
-    padding: 10px;
-}
-
-/* Further reduce the logo size on small screens */
-@media (max-width: 600px) {
-    .navbar-logo img {
-        width: 100px; /* Smaller logo size for mobile screens */
-    }
-
-    .sign-in-button {
-        padding: 5px 10px; /* Further reduce button padding for smaller screens */
-        font-size: 11px; /* Smaller font size */
-    }
-}
-
-/* Extra small screens adjustments */
-@media (max-width: 400px) {
-    .navbar-logo img {
-        width: 80px; /* Even smaller size for very small screens */
-    }
-}
-
