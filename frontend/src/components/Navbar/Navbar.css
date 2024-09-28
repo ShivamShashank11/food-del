@@ -14,7 +14,7 @@
     transition: width 0.3s ease; /* Smooth transition when resizing */
 }
 
-/* Menu items by default */
+/* Menu items */
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -35,8 +35,9 @@
     gap: 20px;
 }
 
+/* Adjust basket-icon size */
 .basket-icon {
-    width: 30px; /* Large enough for visibility on mobile */
+    width: 30px;
     height: auto;
     position: relative;
 }
@@ -44,11 +45,11 @@
 /* Sign-in button with light orange color */
 .sign-in-button {
     background: linear-gradient(135deg, #FFB347, #FFCC99); /* Light orange gradient */
-    font-size: 14px; /* Smaller font size */
+    font-size: 14px;
     color: white;
-    padding: 8px 18px; /* Smaller padding for a compact size */
+    padding: 8px 18px;
     border: none;
-    border-radius: 20px; /* Compact rounded corners */
+    border-radius: 20px;
     cursor: pointer;
     transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
@@ -72,14 +73,29 @@
     background-color: #333;
 }
 
-/* Show the hamburger icon on mobile screens */
+/* Show the hamburger icon and adjust the layout on smaller screens */
 @media (max-width: 900px) {
     .navbar-menu {
-        display: none;
+        display: none; /* Hide the menu items */
     }
 
     .hamburger {
-        display: flex;
+        display: flex; /* Show the hamburger menu */
+    }
+
+    /* Adjust navbar-right for mobile */
+    .navbar-right {
+        gap: 10px;
+        flex-direction: row; /* Ensure the items stay in a row */
+    }
+
+    .navbar-logo img {
+        width: 120px; /* Adjusted logo size */
+    }
+
+    .sign-in-button {
+        padding: 6px 12px; /* Reduce the button padding for mobile */
+        font-size: 12px; /* Smaller font size for mobile */
     }
 }
 
@@ -95,26 +111,15 @@
     padding: 10px;
 }
 
-/* Basket Icon dot indicator */
-.navbar-search-icon .dot {
-    position: absolute;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: #FF4C24;
-    border-radius: 5px;
-    top: -8px;
-    right: -8px;
-}
-
-/* Responsive adjustments for smaller screens */
-@media (max-width: 900px) {
-    .navbar-logo img {
-        width: 120px; /* Adjusted logo size for smaller screens */
-    }
-}
-
+/* Responsive adjustments for even smaller screens */
 @media (max-width: 600px) {
     .navbar-logo img {
         width: 100px; /* Smaller logo size for even smaller screens */
     }
+
+    .sign-in-button {
+        padding: 5px 10px; /* Further reduce button padding for smaller screens */
+        font-size: 11px; /* Smaller font size */
+    }
 }
+
