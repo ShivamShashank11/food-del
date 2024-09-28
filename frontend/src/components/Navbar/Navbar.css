@@ -1,4 +1,4 @@
-/* Main Navbar Styling */
+/* Navbar Styling */
 .navbar {
     background-color: white;
     display: flex;
@@ -10,10 +10,11 @@
 }
 
 .navbar-logo img {
-    width: 150px;
+    width: 150px; /* Default size for larger screens */
+    transition: width 0.3s ease; /* Smooth transition when resizing */
 }
 
-/* Hide menu items by default on mobile */
+/* Menu items by default */
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -27,6 +28,7 @@
     padding: 10px;
 }
 
+/* Right section of the navbar */
 .navbar-right {
     display: flex;
     align-items: center;
@@ -39,13 +41,21 @@
     position: relative;
 }
 
+/* Sign-in button with light orange color */
 .sign-in-button {
-    background: #FF4C24;
+    background: linear-gradient(135deg, #FFB347, #FFCC99); /* Light orange gradient */
+    font-size: 14px; /* Smaller font size */
     color: white;
-    padding: 8px 15px;
+    padding: 8px 18px; /* Smaller padding for a compact size */
     border: none;
-    border-radius: 20px;
+    border-radius: 20px; /* Compact rounded corners */
     cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+
+.sign-in-button:hover {
+    transform: scale(1.05); /* Slight hover effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow */
 }
 
 /* Hamburger menu icon for mobile */
@@ -83,4 +93,28 @@
     right: 0;
     width: 100%;
     padding: 10px;
+}
+
+/* Basket Icon dot indicator */
+.navbar-search-icon .dot {
+    position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #FF4C24;
+    border-radius: 5px;
+    top: -8px;
+    right: -8px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 900px) {
+    .navbar-logo img {
+        width: 120px; /* Adjusted logo size for smaller screens */
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar-logo img {
+        width: 100px; /* Smaller logo size for even smaller screens */
+    }
 }
