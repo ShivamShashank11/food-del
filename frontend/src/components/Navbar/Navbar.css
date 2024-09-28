@@ -1,171 +1,137 @@
-/* Navbar Styling */
 .navbar {
-    background-color: white;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 10px 20px;
-    position: relative;
-    z-index: 10;
-}
-
-.navbar-container {
+    padding: 20px 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    width: 100%;
+    background-color: white; /* Set your preferred background color */
 }
 
-.navbar-logo img {
+.navbar-logo {
     width: 150px;
 }
 
 .navbar-menu {
     display: flex;
-    gap: 30px;
     list-style: none;
-    font-size: 18px;
-    transition: all 0.3s ease;
-}
-
-.navbar-menu li a {
-    text-decoration: none;
+    gap: 20px;
     color: #49557E;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
-}
-
-.navbar-menu li a:hover {
-    background-color: rgba(255, 76, 36, 0.1);
-    color: #FF4C24;
+    font-size: 18px;
 }
 
 .navbar-menu .active {
-    border-bottom: 2px solid #FF4C24;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #FF4C24; /* Change to your preferred active color */
+    transition: border-bottom 0.3s; /* Smooth transition */
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    padding: 10px 15px; /* Add padding for better touch area */
+    border-radius: 5px; /* Round corners */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover */
+}
+
+.navbar-menu a:hover {
+    background-color: rgba(255, 76, 36, 0.1); /* Change hover effect */
+    color: #FF4C24; /* Change text color on hover */
 }
 
 .navbar-right {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 40px;
 }
 
-.navbar-right img,
-.basket-icon {
-    width: 24px;
-    height: 24px;
-}
-
-.basket-icon {
-    width: 40px;
+.navbar-search-icon {
     position: relative;
 }
 
-.dot {
+.basket-icon {
+    width: 50px; /* Increased size to 50px */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.navbar-search-icon .dot {
     position: absolute;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: #FF4C24;
+    border-radius: 5px;
     top: -8px;
     right: -8px;
-    width: 12px;
-    height: 12px;
-    background-color: #FF4C24;
-    border-radius: 50%;
 }
 
 .sign-in-button {
     background: linear-gradient(135deg, #FF4C24, #FF7F50);
+    font-size: 16px;
     color: white;
     border: none;
-    padding: 10px 15px;
+    padding: 12px 30px;
     border-radius: 30px;
     cursor: pointer;
-    font-size: 14px;
-    white-space: nowrap;
+    transition: background-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
 
-.hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-    margin-left: 15px;
+.sign-in-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
+.navbar-profile {
+    position: relative;
 }
 
-/* Mobile Menu */
-.navbar-menu.open {
+.navbar-profile-dropdown {
     position: absolute;
-    top: 60px;
+    display: none;
     right: 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
+    z-index: 1;
+}
+
+.navbar-profile:hover .navbar-profile-dropdown {
     display: flex;
-    z-index: 100;
-    width: 100%;
-    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #fff2ef;
+    padding: 12px 25px;
+    border-radius: 4px;
+    border: 1px solid tomato;
+    list-style: none;
 }
 
-.navbar-menu.open li a {
-    width: 100%;
+.navbar-profile-dropdown li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
 }
 
-/* Media Queries */
-@media (max-width: 900px) {
-    .navbar-container {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-    }
+.navbar-profile-dropdown li:hover {
+    color: #FF4C24;
+}
 
-    .navbar-logo img {
-        width: 130px;
+@media (max-width: 1050px) {
+    .navbar-logo {
+        width: 140px;
     }
-
     .navbar-menu {
-        display: none;
+        gap: 20px;
+        font-size: 17px;
     }
+}
 
-    .hamburger {
-        display: flex;
+@media (max-width: 900px) {
+    .navbar-logo {
+        width: 120px;
     }
-
-    .navbar-right {
-        display: flex;
-        align-items: center;
+    .navbar-menu {
         gap: 15px;
+        font-size: 16px;
     }
 }
 
 @media (max-width: 750px) {
-    .navbar-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-
-    .navbar-right {
-        gap: 10px;
-    }
-
-    .sign-in-button {
-        padding: 8px 12px;
-        font-size: 12px;
-    }
-
-    .basket-icon {
-        width: 32px;
-    }
-
-    .hamburger span {
-        width: 20px;
+    .navbar-menu {
+        display: none; /* Hide menu on smaller screens */
     }
 }
-
