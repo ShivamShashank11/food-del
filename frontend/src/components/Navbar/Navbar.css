@@ -14,7 +14,6 @@
     transition: width 0.3s ease; /* Smooth transition when resizing */
 }
 
-/* Menu items */
 .navbar-menu {
     display: flex;
     list-style: none;
@@ -28,16 +27,14 @@
     padding: 10px;
 }
 
-/* Right section of the navbar */
 .navbar-right {
     display: flex;
     align-items: center;
     gap: 20px;
 }
 
-/* Adjust basket-icon size */
 .basket-icon {
-    width: 30px;
+    width: 30px; /* Large enough for visibility on mobile */
     height: auto;
     position: relative;
 }
@@ -83,7 +80,6 @@
         display: flex; /* Show the hamburger menu */
     }
 
-    /* Adjust navbar-right for mobile */
     .navbar-right {
         gap: 10px;
         flex-direction: row; /* Ensure the items stay in a row */
@@ -111,15 +107,22 @@
     padding: 10px;
 }
 
-/* Responsive adjustments for even smaller screens */
+/* Further reduce the logo size on small screens */
 @media (max-width: 600px) {
     .navbar-logo img {
-        width: 100px; /* Smaller logo size for even smaller screens */
+        width: 100px; /* Smaller logo size for mobile screens */
     }
 
     .sign-in-button {
         padding: 5px 10px; /* Further reduce button padding for smaller screens */
         font-size: 11px; /* Smaller font size */
+    }
+}
+
+/* Extra small screens adjustments */
+@media (max-width: 400px) {
+    .navbar-logo img {
+        width: 80px; /* Even smaller size for very small screens */
     }
 }
 

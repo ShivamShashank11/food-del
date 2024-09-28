@@ -9,6 +9,7 @@ import { StoreContext } from "../../Context/StoreContext";
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navigate = useNavigate();
 
   const logout = () => {
@@ -19,46 +20,46 @@ const Navbar = ({ setShowLogin }) => {
 
   return (
     <div className="navbar">
-      <Link to="/">
-        <img className="navbar-logo" src={assets.logo6} alt="Logo" />
+      <Link to="/" className="navbar-logo">
+        <img src={assets.logo6} alt="Logo" />
       </Link>
-      <ul className="navbar-menu">
+      <div className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         <Link
           to="/"
           onClick={() => setMenu("home")}
           className={`${menu === "home" ? "active" : ""}`}
         >
-          home
+          Home
         </Link>
         <a
           href="#explore-menu"
           onClick={() => setMenu("menu")}
           className={`${menu === "menu" ? "active" : ""}`}
         >
-          menu
+          Menu
         </a>
         <a
           href="#app-download"
           onClick={() => setMenu("mob-app")}
           className={`${menu === "mob-app" ? "active" : ""}`}
         >
-          mobile app
+          Mobile App
         </a>
         <a
           href="#offers"
           onClick={() => setMenu("offers")}
           className={`${menu === "offers" ? "active" : ""} offer-link`}
         >
-          offers
+          Offers
         </a>
         <a
           href="#footer"
           onClick={() => setMenu("contact")}
           className={`${menu === "contact" ? "active" : ""}`}
         >
-          contact us
+          Contact Us
         </a>
-      </ul>
+      </div>
       <div className="navbar-right">
         <img src={assets.search_icon} alt="Search" />
         <Link to="/cart" className="navbar-search-icon">
@@ -85,6 +86,11 @@ const Navbar = ({ setShowLogin }) => {
             </ul>
           </div>
         )}
+      </div>
+      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <span></span>
+        <span></span>
+        <span></span>
       </div>
     </div>
   );
