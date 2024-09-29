@@ -45,9 +45,9 @@ const Navbar = ({ setShowLogin }) => {
           Home
         </Link>
         <Link
-          to="#explore-menu" // Changed from <a> to <Link>
+          to="#explore-menu"
           onClick={() => {
-            scrollToElement("explore-menu"); // Use scrollToElement function
+            scrollToElement("explore-menu");
             setMenu("menu");
             setIsMenuOpen(false);
           }}
@@ -56,9 +56,9 @@ const Navbar = ({ setShowLogin }) => {
           Menu
         </Link>
         <Link
-          to="#app-download" // Changed from <a> to <Link>
+          to="#app-download"
           onClick={() => {
-            scrollToElement("app-download"); // Change if necessary
+            scrollToElement("app-download");
             setMenu("mob-app");
             setIsMenuOpen(false);
           }}
@@ -67,9 +67,9 @@ const Navbar = ({ setShowLogin }) => {
           Mobile App
         </Link>
         <Link
-          to="#footer" // Changed from <a> to <Link>
+          to="#footer"
           onClick={() => {
-            scrollToElement("footer"); // Change if necessary
+            scrollToElement("footer");
             setMenu("contact");
             setIsMenuOpen(false);
           }}
@@ -114,7 +114,6 @@ const Navbar = ({ setShowLogin }) => {
         <span></span>
         <span></span>
       </div>
-      {/* Modal for the responsive menu */}
       {isMenuOpen && (
         <div className="responsive-menu">
           <div className="responsive-menu-content">
