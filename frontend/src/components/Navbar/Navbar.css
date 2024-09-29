@@ -135,5 +135,45 @@
         display: block; /* Show hamburger icon */
     }
 }
+/* Existing styles remain unchanged */
+
+.responsive-menu {
+    position: absolute; /* Position relative to navbar */
+    top: 60px; /* Position just below the navbar */
+    right: 20px; /* Align to the right */
+    width: 200px; /* Set a fixed width */
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    border: 1px solid #ccc; /* Border for better visibility */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 999; /* Ensure it is on top */
+    display: flex; /* Flexbox for responsive content */
+    flex-direction: column; /* Stack items vertically */
+}
+
+.responsive-menu-content {
+    padding: 10px; /* Space inside the menu */
+}
+
+.responsive-menu a {
+    padding: 10px; /* Padding for menu items */
+    font-size: 16px; /* Adjust font size */
+    color: #000; /* Change color as needed */
+    text-decoration: none; /* Remove underline */
+}
+
+.responsive-menu a:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .navbar-menu {
+        display: none; /* Hide menu on small screens */
+    }
+    .hamburger {
+        display: block; /* Show hamburger icon */
+    }
+}
 
 

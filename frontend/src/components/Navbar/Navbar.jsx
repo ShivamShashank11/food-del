@@ -17,6 +17,17 @@ const Navbar = ({ setShowLogin }) => {
     navigate("/");
   };
 
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
+  const scrollToElement = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="navbar">
       <Link to="/" className="navbar-logo">
@@ -33,36 +44,39 @@ const Navbar = ({ setShowLogin }) => {
         >
           Home
         </Link>
-        <a
-          href="#explore-menu"
+        <Link
+          to="#explore-menu" // Changed from <a> to <Link>
           onClick={() => {
+            scrollToElement("explore-menu"); // Use scrollToElement function
             setMenu("menu");
             setIsMenuOpen(false);
           }}
           className={`${menu === "menu" ? "active" : ""}`}
         >
           Menu
-        </a>
-        <a
-          href="#app-download"
+        </Link>
+        <Link
+          to="#app-download" // Changed from <a> to <Link>
           onClick={() => {
+            scrollToElement("app-download"); // Change if necessary
             setMenu("mob-app");
             setIsMenuOpen(false);
           }}
           className={`${menu === "mob-app" ? "active" : ""}`}
         >
           Mobile App
-        </a>
-        <a
-          href="#footer"
+        </Link>
+        <Link
+          to="#footer" // Changed from <a> to <Link>
           onClick={() => {
+            scrollToElement("footer"); // Change if necessary
             setMenu("contact");
             setIsMenuOpen(false);
           }}
           className={`${menu === "contact" ? "active" : ""}`}
         >
           Contact Us
-        </a>
+        </Link>
       </div>
 
       <div className="navbar-right">
@@ -95,7 +109,7 @@ const Navbar = ({ setShowLogin }) => {
           </div>
         )}
       </div>
-      <div className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <div className="hamburger" onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
@@ -117,6 +131,7 @@ const Navbar = ({ setShowLogin }) => {
             <Link
               to="#explore-menu"
               onClick={() => {
+                scrollToElement("explore-menu");
                 setMenu("menu");
                 setIsMenuOpen(false);
               }}
@@ -127,6 +142,7 @@ const Navbar = ({ setShowLogin }) => {
             <Link
               to="#app-download"
               onClick={() => {
+                scrollToElement("app-download");
                 setMenu("mob-app");
                 setIsMenuOpen(false);
               }}
@@ -137,6 +153,7 @@ const Navbar = ({ setShowLogin }) => {
             <Link
               to="#footer"
               onClick={() => {
+                scrollToElement("footer");
                 setMenu("contact");
                 setIsMenuOpen(false);
               }}
