@@ -1,147 +1,139 @@
-/* Navbar container */
+/* Existing styles */
+/* Existing styles */
+
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    background-color: transparent;
     width: 100%;
-  }
-  
-  /* Logo Styling */
-  .navbar-logo img {
-    width: 150px;
-    transition: width 0.3s;
-  }
-  
-  @media (max-width: 768px) {
-    .navbar-logo img {
-      width: 100px;
-    }
-  }
-  
-  /* Menu items */
-  .navbar-menu {
+    background-color: white; /* Change background as needed */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+}
+
+.navbar-logo img {
+    height: 40px; /* Adjust logo size as needed */
+}
+
+.navbar-menu {
     display: flex;
-    list-style: none;
-    gap: 20px;
-  }
-  
-  .navbar-menu a {
+    align-items: center;
+}
+
+.navbar-menu a,
+.navbar-menu .active {
+    margin: 0 15px;
     text-decoration: none;
-    color: #49557E;
-    padding: 10px;
-  }
-  
-  .active {
-    font-weight: bold;
-  }
-  
-  /* Hamburger Menu */
-  .hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
+    color: #000; /* Change color as needed */
+    font-weight: bold; /* Make the menu bold */
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon-container {
+    position: relative; /* Position relative for the dot */
+    margin-right: 20px; /* Added space to separate from sign-in button */
+}
+
+.basket-icon {
+    width: 25px; /* Set a smaller width for the basket icon */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.dot {
+    width: 10px; /* Diameter of the dot */
+    height: 10px; /* Ensure it is circular */
+    background-color: red; /* Dot color */
+    border-radius: 50%; /* Make it a circle */
+    position: absolute; /* Position relative to basket icon */
+    top: -5px; /* Adjust position above the basket icon */
+    right: -5px; /* Adjust position to align properly */
+    display: none; /* Hide by default */
+}
+
+.dot.visible {
+    display: block; /* Show when there are items in the cart */
+}
+
+.sign-in-button {
+    background-color: #ff3d00; /* Change as needed */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .hamburger span {
+}
+
+.navbar-profile {
+    position: relative; /* Necessary for dropdown */
+}
+
+.navbar-profile-dropdown {
+    display: none; /* Hide by default */
+    position: absolute; /* Position dropdown */
+    background-color: white; /* Change as needed */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1;
+}
+
+.navbar-profile:hover .navbar-profile-dropdown {
+    display: block; /* Show dropdown on hover */
+}
+
+.hamburger {
+    display: none; /* Hidden on larger screens */
+    cursor: pointer;
+}
+
+.hamburger span {
+    display: block;
     width: 25px;
     height: 3px;
-    background-color: #333;
-  }
-  
-  /* Show hamburger menu for mobile */
-  @media (max-width: 900px) {
+    background: #333; /* Color for hamburger lines */
+    margin: 5px 0; /* Space between lines */
+}
+
+/* Responsive Menu Styles */
+.responsive-menu {
+    position: absolute; /* Position relative to navbar */
+    top: 60px; /* Position just below the navbar */
+    right: 20px; /* Align to the right */
+    width: 200px; /* Set a fixed width */
+    background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+    border: 1px solid #ccc; /* Border for better visibility */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 999; /* Ensure it is on top */
+}
+
+.responsive-menu-content {
+    display: flex;
+    flex-direction: column;
+    padding: 10px; /* Space inside the menu */
+}
+
+.responsive-menu a {
+    padding: 10px; /* Padding for menu items */
+    font-size: 16px; /* Adjust font size */
+    color: #000; /* Change color as needed */
+    text-decoration: none; /* Remove underline */
+}
+
+.responsive-menu a:hover {
+    background-color: #f0f0f0; /* Change background on hover */
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
     .navbar-menu {
-      display: none;
+        display: none; /* Hide menu on small screens */
     }
-    
     .hamburger {
-      display: flex;
+        display: block; /* Show hamburger icon */
     }
-  
-    .hamburger-menu {
-      display: flex;
-      flex-direction: column;
-      background: white;
-      position: absolute;
-      top: 60px;
-      right: 0;
-      width: 100%;
-      padding: 10px;
-    }
-  }
-  
-  /* Profile icon and dropdown */
-  .navbar-profile {
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .navbar-profile img {
-    width: 35px;
-  }
-  
-  .navbar-profile-dropdown {
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 150px;
-    padding: 10px 0;
-    z-index: 1000;
-  }
-  
-  .navbar-profile-dropdown li {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .navbar-profile-dropdown img {
-    width: 20px;
-    margin-right: 10px;
-  }
-  
-  /* Search and basket icons */
-  .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-  }
-  
-  .navbar-right img {
-    width: 25px;
-  }
-  
-  /* Sign In Button */
-  .sign-in-button {
-    background: linear-gradient(135deg, #FFB347, #FFCC99);
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-  }
-  
-  .sign-in-button:hover {
-    transform: scale(1.05);
-    transition: 0.3s;
-  }
-  
-  /* Dot notification on cart icon */
-  .dot {
-    width: 8px;
-    height: 8px;
-    background-color: red;
-    border-radius: 50%;
-    position: absolute;
-    top: 25px; /* Adjust position as necessary */
-    right: 105px; /* Adjust position as necessary */
-  }
-  
-  
+}
+
+
