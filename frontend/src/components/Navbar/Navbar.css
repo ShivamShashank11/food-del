@@ -1,147 +1,223 @@
+/* Navbar container */
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    width: 100%;
-    background-color: transparent; /* Transparent background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 25px;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-.navbar-logo img {
-    width: 150px;
-    transition: width 0.3s;
+/* Logo */
+.bar-logo img {
+  height: 48px;
+  cursor: pointer;
+  border-radius: 8px; /* subtle rounding */
 }
 
-@media (max-width: 768px) {
-    .navbar-logo img {
-        width: 100px;
-    }
-}
-
+/* Main menu */
 .navbar-menu {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-    font-size: 16px;
+  display: flex;
+  gap: 30px;
 }
 
 .navbar-menu a {
-    text-decoration: none;
-    color: #49557E; /* Text color */
-    padding: 10px; /* Maintain clickable area */
+  text-decoration: none;
+  font-size: 1.05rem;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.25s ease;
+  padding-bottom: 3px;
+  border-bottom: 3px solid transparent;
 }
 
+.navbar-menu a.active,
+.navbar-menu a:hover {
+  color: #ff6600; /* bright orange */
+  border-bottom: 3px solid #ff6600;
+  font-weight: 600;
+}
+
+/* Right side container */
 .navbar-right {
-    display: flex;
-    align-items: center;
-    gap: 15px;
+  display: flex;
+  align-items: center;
+  gap: 22px;
 }
 
-.navbar-right img {
-    width: 25px;
-    height: 25px;
-}
-
-.cart-icon-container {
-    position: relative; /* For dot positioning */
+/* Cart icon */
+.navbar-cart-icon {
+  position: relative;
+  cursor: pointer;
 }
 
 .basket-icon {
-    width: 25px;
-    height: 25px;
+  width: 26px;
+  height: 26px;
+  fill: #333;
+  transition: fill 0.3s ease;
 }
 
+.navbar-cart-icon:hover .basket-icon {
+  fill: #ff6600;
+}
+
+/* Red dot on cart */
 .dot {
-    width: 8px; /* Diameter of the dot */
-    height: 8px; /* Ensure it is circular */
-    background-color: red; /* Color of the dot */
-    border-radius: 50%; /* Make it a circle */
-    position: absolute; /* Position relative to basket icon */
-    top: -5px; /* Adjust this value to position the dot correctly */
-    right: -5px; /* Adjust this value to position the dot correctly */
-    display: none; /* Hide by default */
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  width: 12px;
+  height: 12px;
+  background: #ff6600;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .dot.visible {
-    display: block; /* Show when there are items in the cart */
+  opacity: 1;
 }
 
+/* Sign-in button */
 .sign-in-button {
-    background: linear-gradient(135deg, #FFB347, #FFCC99);
-    color: white;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: transform 0.3s, box-shadow 0.3s;
+  background: #ff6600;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 25px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-size: 1rem;
 }
 
 .sign-in-button:hover {
-    transform: scale(1.05);
+  background: #cc5200;
 }
 
-.hamburger {
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.hamburger span {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-}
-
-@media (max-width: 900px) {
-    .navbar-menu {
-        display: none; /* Hide the main menu on small screens */
-    }
-
-    .hamburger {
-        display: flex; /* Show hamburger icon on small screens */
-    }
-
-    .responsive-menu {
-        display: flex;
-        flex-direction: column;
-        position: absolute;
-        top: 60px; /* Adjust this value based on navbar height */
-        right: 0;
-        background-color: white;
-        width: 100%;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        z-index: 1000; /* Ensure it appears above other content */
-    }
-
-    .responsive-menu-content {
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-    }
-
-    .responsive-menu-content a {
-        padding: 10px;
-        border-bottom: 1px solid #ddd; /* Optional: to separate links */
-    }
-}
-
-/* Responsive dropdown for profile */
+/* Profile picture */
 .navbar-profile {
-    position: relative;
+  position: relative;
+  cursor: pointer;
 }
 
+.navbar-profile img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #ff6600;
+  transition: box-shadow 0.3s ease;
+}
+
+.navbar-profile:hover img {
+  box-shadow: 0 0 8px #ff6600aa;
+}
+
+/* Dropdown menu */
 .navbar-profile-dropdown {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    z-index: 10;
+  position: absolute;
+  top: 48px;
+  right: 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 18px rgba(255, 102, 0, 0.25);
+  padding: 10px 0;
+  width: 180px;
+  list-style: none;
+  display: none;
+  font-weight: 500;
+  color: #444;
+  user-select: none;
+  z-index: 9999;
 }
 
 .navbar-profile:hover .navbar-profile-dropdown {
-    display: block; /* Show dropdown on hover */
+  display: block;
+}
+
+.navbar-profile-dropdown li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 25px;
+  cursor: pointer;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar-profile-dropdown li:hover {
+  background: #ff66001a;
+  color: #ff6600;
+  font-weight: 600;
+}
+
+.navbar-profile-dropdown img {
+  width: 18px;
+  height: 18px;
+  filter: invert(33%) sepia(94%) saturate(3000%) hue-rotate(10deg) brightness(95%) contrast(90%);
+}
+
+/* Divider */
+.navbar-profile-dropdown hr {
+  margin: 6px 0;
+  border: none;
+  border-top: 1px solid #eee;
+}
+
+/* Responsive hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 28px;
+  background: #333;
+  border-radius: 2px;
+}
+
+/* Responsive menu */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .responsive-menu {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    background: white;
+    width: 220px;
+    height: calc(100vh - 60px);
+    box-shadow: -3px 0 15px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+  }
+
+  .responsive-menu-content {
+    display: flex;
+    flex-direction: column;
+    padding: 25px 15px;
+  }
+
+  .responsive-menu-content a {
+    padding: 15px 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+    color: #333;
+    text-decoration: none;
+  }
+
+  .responsive-menu-content a.active,
+  .responsive-menu-content a:hover {
+    color: #ff6600;
+  }
 }

@@ -1,92 +1,84 @@
 .explore-menu {
   padding: 20px;
-  text-align: left; 
-  background-color: #f9f9f9; /* Light background for a fresh look */
-  border-radius: 10px; /* More rounded corners */
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+  text-align: left;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 .explore-menu h1 {
-  font-size: 2.5em; 
-  font-weight: 600; /* Medium weight for a modern look */
-  color: #222; /* Darker color for better readability */
-  margin-bottom: 10px; 
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 10px;
 }
 
 .explore-menu-text {
-  margin-bottom: 20px; 
-  font-size: 1.1em; 
-  color: #555; /* Softer color for text */
+  margin-bottom: 20px;
+  font-size: 1.1em;
+  color: #555;
 }
 
-/* Menu List Container (horizontal scroll) */
 .explore-menu-list {
-  display: flex; /* Align items in a row */
-  overflow-x: auto; /* Allow horizontal scrolling */
-  padding: 10px 0; /* Vertical padding for space */
-  scroll-behavior: smooth; /* Smooth scroll */
-  gap: 20px; /* Space between items */
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  gap: 20px;
 }
 
-/* Menu Item Styling */
 .explore-menu-list-item {
-  flex: 0 0 auto; /* Prevent items from shrinking */
-  text-align: center; 
-  cursor: pointer; 
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
-  border-radius: 12px; /* Rounded corners */
-  background-color: #fff; /* White background for items */
-  padding: 10px; /* Padding for better touch area */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow */
-  max-width: 120px; /* Fixed width for uniformity */
+  flex: 0 0 auto;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 12px;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 120px;
 }
 
-/* Hover Effect */
 .explore-menu-list-item:hover {
-  transform: translateY(-3px); /* Lift effect on hover */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* More pronounced shadow */
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* Image Styling */
 .menu-item-image {
-  width: 100px; 
-  height: 100px; 
-  border-radius: 12px; /* Slightly rounded corners */
-  object-fit: cover; /* Ensure images fill the box */
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
 }
 
-/* Menu Name Styling */
 .explore-menu-list-item p {
-  font-size: 1em; 
-  color: #333; 
-  margin-top: 8px; 
+  font-size: 1em;
+  color: #333;
+  margin-top: 8px;
 }
 
-/* Responsive Adjustments */
 @media (max-width: 768px) {
   .explore-menu h1 {
-    font-size: 2em; 
+    font-size: 2em;
   }
   .explore-menu-text {
-    font-size: 1em; 
+    font-size: 1em;
   }
   .menu-item-image {
-    width: 80px; 
-    height: 80px; 
+    width: 80px;
+    height: 80px;
   }
 }
 
 @media (max-width: 576px) {
   .explore-menu h1 {
-    font-size: 1.5em; 
+    font-size: 1.5em;
   }
   .explore-menu-text {
-    font-size: 0.9em; 
+    font-size: 0.9em;
   }
   .menu-item-image {
-    width: 60px; 
-    height: 60px; 
+    width: 60px;
+    height: 60px;
   }
 }
-
-  

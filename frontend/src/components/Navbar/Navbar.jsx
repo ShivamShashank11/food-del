@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
-import "./Navbar.css"; // Ensure this path is correct
-import { assets } from "../../assets/assets";
+import "./Navbar.css"; // Keep this path consistent with your project structure
+import { assets } from "../../assets/assets"; // Adjust if your assets folder is in a different location
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../Context/StoreContext";
 
@@ -33,6 +33,7 @@ const Navbar = ({ setShowLogin }) => {
       <Link to="/" className="navbar-logo">
         <img src={assets.logo6} alt="Logo" />
       </Link>
+
       <div className={`navbar-menu ${isMenuOpen ? "open" : ""}`}>
         <Link
           to="/"
@@ -109,11 +110,13 @@ const Navbar = ({ setShowLogin }) => {
           </div>
         )}
       </div>
+
       <div className="hamburger" onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </div>
+
       {isMenuOpen && (
         <div className="responsive-menu">
           <div className="responsive-menu-content">
