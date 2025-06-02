@@ -1,10 +1,9 @@
 import React, { useContext, useState } from "react";
-import "./Navbar.css"; // Keep this path consistent with your project structure
-import { assets } from "../../assets/assets"; // Adjust if your assets folder is in a different location
+import "./Navbar.css";
+import { assets } from "../../assets/assets";
 import { Link, useNavigate } from "react-router-dom";
 import { StoreContext } from "../../Context/StoreContext";
 
-// eslint-disable-next-line react/prop-types
 const Navbar = ({ setShowLogin }) => {
   const [menu, setMenu] = useState("home");
   const { getTotalCartAmount, token, setToken } = useContext(StoreContext);
@@ -89,6 +88,7 @@ const Navbar = ({ setShowLogin }) => {
             ></div>
           </div>
         </Link>
+
         {!token ? (
           <button onClick={() => setShowLogin(true)} className="sign-in-button">
             Sign In
